@@ -1,0 +1,135 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 24 33% 97%;
+    --foreground: 222.2 84% 4.9%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 222.2 84% 4.9%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 222.2 84% 4.9%;
+
+    --primary: 24 95% 50%;
+    --primary-foreground: 0 0% 100%;
+    
+    --secondary: 32 95% 44%;
+    --secondary-foreground: 0 0% 100%;
+
+    --muted: 24 10% 96%;
+    --muted-foreground: 215.4 16.3% 46.9%;
+
+    --accent: 12 90% 45%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+    --ring: 24 95% 50%;
+
+    --radius: 0.75rem;
+  }
+
+  .dark {
+    --background: 222.2 84% 4.9%;
+    --foreground: 210 40% 98%;
+
+    --card: 222.2 84% 4.9%;
+    --card-foreground: 210 40% 98%;
+
+    --popover: 222.2 84% 4.9%;
+    --popover-foreground: 210 40% 98%;
+
+    --primary: 24 95% 50%;
+    --primary-foreground: 222.2 84% 4.9%;
+
+    --secondary: 32 95% 44%;
+    --secondary-foreground: 210 40% 98%;
+
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
+
+    --accent: 12 90% 45%;
+    --accent-foreground: 210 40% 98%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 17.5%;
+    --ring: 24 95% 50%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+    font-family: 'Poppins', sans-serif;
+    scroll-behavior: smooth;
+  }
+  section {
+    @apply py-4 md:py-6; /* Reduced padding */
+  }
+  .section-title {
+    @apply text-2xl md:text-3xl font-bold text-center mb-3 relative; /* Reduced margin */
+  }
+  .section-title::after {
+    @apply content-[''] bg-secondary block h-1 w-16 mx-auto mt-1.5 rounded-full; /* Reduced width and margin */
+  }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 6px; /* Reduced width */
+}
+::-webkit-scrollbar-track {
+  background: hsl(var(--background));
+}
+::-webkit-scrollbar-thumb {
+  background: hsl(var(--secondary));
+  border-radius: 10px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: hsl(var(--accent));
+}
+
+/* Modern card effect */
+.modern-card {
+  @apply bg-white/80 backdrop-blur-sm border border-white/20 shadow-md; /* Reduced shadow */
+}
+
+/* Hover effect for interactive elements */
+.hover-lift {
+  @apply transition-all duration-300 ease-out hover:-translate-y-0.5 hover:shadow-md; /* Reduced lift and shadow */
+}
+
+/* Text highlight effect */
+.highlight-text {
+  @apply text-secondary font-semibold;
+}
+
+/* Section spacing utilities */
+.section-spacing {
+  @apply mb-6 md:mb-10; /* Reduced margins */
+}
+
+/* Card spacing utilities */
+.card-spacing {
+  @apply p-3 md:p-4; /* Reduced padding */
+}
+
+/* Grid gap utilities */
+.grid-gap {
+  @apply gap-3 md:gap-4; /* Reduced gaps */
+}
